@@ -1,0 +1,31 @@
+title Single Page App
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+server-->browser: HTML content
+
+note over browser:
+    Handle HTML code, rendering page,
+    and find out the other elements needed
+end note
+
+browser->server: https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+
+note over browser:
+    Excute js-code in spa.js,
+    start to equest json data from server
+end note
+
+
+browser->server: https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "new note content", date: "2021-01-23T21:59:27.884Z" }, ...]
+
+note over browser:
+    Rendering list of notes
+end note
+
+browser->server: https://studies.cs.helsinki.fi/favicon.ico
+server-->browser:  favicon.ico

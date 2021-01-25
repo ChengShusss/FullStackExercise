@@ -1,0 +1,14 @@
+title New note on SPA
+
+browser->server: HTTP Post https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+browser-->server: payload={"content":"abc","date":"2021-01-25T13:49:55.071Z"}
+server->browser: Response:{"message":"note created"}
+
+note left of browser:
+    Note: the added note is't from server,
+    but form localhost(js-code add it into array "note")
+end note
+
+note over browser:
+    Rendering new list of notes
+end note
