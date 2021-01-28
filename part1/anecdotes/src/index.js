@@ -35,9 +35,6 @@ const App = (props) => {
     setPoints(copy);
     var max = Math.max(...copy);
     setIndex(copy.indexOf(max));
-    console.log("copy", copy)
-    console.log("max element", max)
-    console.log("index", index)
   };
 
   return (
