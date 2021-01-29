@@ -1,13 +1,14 @@
 import React from "react";
 
-const Person = ({ name, number }) => (
+const Person = ({ person, deletePerson }) => (
   <tr>
-    <td>{name}</td>
-    <td>{number}</td>
+    <td>{person.name}</td>
+    <td>{person.number}</td>
+    <td><button onClick={() => deletePerson(person)}>delete</button></td>
   </tr>
 );
 
-const Numbers = ({ persons, filterString }) => (
+const Numbers = ({ persons, filterString, deletePerson }) => (
   <table>
     <tbody>
       {persons
@@ -15,7 +16,7 @@ const Numbers = ({ persons, filterString }) => (
           (person) => person.name.toLowerCase().match(filterString) !== null
         )
         .map((person) => (
-          <Person name={person.name} number={person.number} key={person.name} />
+          <Person person={person} key={person.name} deletePerson={deletePerson} />
         ))}
     </tbody>
   </table>
